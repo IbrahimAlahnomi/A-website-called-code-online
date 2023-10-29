@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Login</title>
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Login</title>
+
+    <script>
+         //تستخدم للتأكد من صحة المعلومات التي تم إدخالها في نموذج HTML، وإذا تم التحقق من صحة المعلومات، تُظهر رسالة تأكيد ناجحة باستخدام `alert()
+
+        function submitForm() {
+            // Perform validation here
+            
+            // Display success message
+            alert("Thanks for the communication!");
+        }
+    </script>
+
+
+  </head>
+  <body>
+    
+    <section class="about-home">
+        <nav>
+            <h2>Code<span>Online</span></h2>
+            <ul id="actions">
+                <li><a href="/index.html">Home</a></li>
+                    <li><a href="/docs/About me.html">About Me</a></li>
+                    <li><a href="/docs/skills.html">Skills</a></li>
+                    <li><a href="/docs/login.html">Login</a></li>
+            </ul>
+
+            
+
+            <button id="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </section>
+    
+
+
+
+
+    <section class="login">
+        <h2>  Enter your data  </h2>
+    <form id="dataForm">
+        <label class="label" for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+       
+        <label class="label" for="email"> Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+       
+        <label class="label" for="phone">Phone :</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+       
+        <button type="submit">submit</button>
+    </form>
+   
+    <table id="dataTable">
+        <thead>
+            <tr class="tr">
+                <th class="th">Name</th>
+                <th class="th">Email </th>
+                <th class="th">Phone</th>
+            </tr>
+        </thead>
+        <tbody></tbody> <!-- العنصر المستخدم لتحديد الجسم الرئيسي للجدول الذي يتم وضع البيانات فيه -->
+    </table>
+
+    <script>
+        // هذا الدالة تقوم بمنع ارسال النموذج عند الضغط على زر الارسال 
+          document.getElementById("dataForm").addEventListener("submit", function(event) {
+              event.preventDefault();
+    // هذا الدالة تقوم باخذ القيم المدخلة من عناصر النموذج وتخزينها في متغيرات
+              var name = document.getElementById("name").value;
+              var email = document.getElementById("email").value;
+              var phone = document.getElementById("phone").value;
+              var table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+            //هذا الدالة تقوم باضافة سطر جديد 
+              var newRow = table.insertRow(table.rows.length);
+              // يتم استدعائها لانشاء خلية جديدة واضافتها الى الصف 
+              var cell1 = newRow.insertCell(0);
+              var cell2 = newRow.insertCell(1);
+              var cell3 = newRow.insertCell(2);
+              // يتم استدعائها للوصول الى المحتوى الذي يمكن عرضه
+              cell1.innerHTML = name;
+              cell2.innerHTML = email;
+              cell3.innerHTML = phone;
+              // هذا الدالة تقوم بمسح القيم المدخلة
+              document.getElementById("name").value = "";
+              document.getElementById("email").value = "";
+              document.getElementById("phone").value = "";
+          });</script>
+
+
+    </section>
+
+    
+      <footer style="margin-top: 2rem;">
+        <div class="content-footer">
+            <h2>&copy;By Ibrahim <span>Mohammad</span></h2>
+            <p>
+                We're not the only ones, but we're the best.
+            </p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script src="js/scripr1.js"></script>
+</body>
+
+
+</html>
+
